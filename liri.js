@@ -11,7 +11,9 @@ var moment = require('moment');
 
 // Take 2 arguments
 var liriCmd = process.argv[2];
-var input = process.argv[3];
+var input = process.argv.slice(3).join(" ");
+console.log("INPUT----------------", input);
+
 
 // The switch-case will direct which function gets run.
 function liriApps(liriCmd, input) {
@@ -42,7 +44,7 @@ function liriApps(liriCmd, input) {
 function getConcert(artist) {
     var artist = input;
     var queryUrlBand = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp"
-    console.log(queryUrlBand);
+    // console.log(queryUrlBand);
 
     axios.get(queryUrlBand).then(
         function (response) {
@@ -63,23 +65,25 @@ function getSong(songName) {
         songName = "The Sign";
     };
     console.log(songName);
-
+    
     // Search for song name:
     spotify.search({ type: 'track', query: songName }, function (err, data) {
         if (err) {
             return console.log('Error occurred: ' + err);
         }
+        // console.log("data for song name: ", data.tracks.items[0]);
+        
         // Artist(s)
-        console.log("Artist Name: " + data.tracks.items[0].album.artists[0].name);
+        console.log("Artist Name: " + data.tracks.items[0].album.artists[0].name + "\r\n");
 
         // The song's name
-        console.log("Song Name: " + data.tracks.items[0].name);
+        console.log("Song Name: " + data.tracks.items[0].name + "\r\n");
 
         // A preview link of the song from Spotify
-        console.log("Preview Link: " + data.tracks.items[0].href);
+        console.log("Preview Link: " + data.tracks.items[0].href + "\r\n");
 
         // The album that the song is from
-        console.log("Album Name: " + data.tracks.items[0].album.name);
+        console.log("Album Name: " + data.tracks.items[0].album.name + "\r\n");
 
         // Append text into log.txt file
         var logSong = "Artist: " + data.tracks.items[0].album.artists[0].name + "\nSong Name: " + data.tracks.items[0].name + "\n Preview Link: " + data.tracks.items[0].href + "\nAlbum Name: " + data.tracks.items[0].album.name + "\n";
@@ -94,6 +98,7 @@ function getSong(songName) {
 
 // FUNCTION FOR MOVIE-THIS
 function getMovie(movieName) {
+    console.log("MOVIE>>>>>>", movieName)
     // If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'
     if (!movieName) {
         movieName = "mr nobody";
@@ -103,10 +108,9 @@ function getMovie(movieName) {
     var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
     console.log(queryUrl); //help debugging
 
-    axios.get(queryUrl).then(
+    axios.request(queryUrl).then(
         function (response) {
             // console.log(response.data);
-
             console.log("Title: " + response.data.Title + "\r\n");
             console.log("Year: " + response.data.Year + "\r\n");
             console.log("IMDB Rating: " + response.data.imdbRating + "\r\n");
@@ -116,9 +120,9 @@ function getMovie(movieName) {
             console.log("Movie Plot: " + response.data.Plot + "\r\n");
             console.log("Movie Actors: " + response.data.Actors + "\r\n");
             "===================END================" + "\r\n";
+            // logResults(response);
         }
         )
-        logResults(response);
 }
 
 
@@ -135,7 +139,7 @@ function getRandom() {
             var randomData = data.split(",");
             liriApps(randomData[0], randomData[1]);
         }
-        console.log("testing" + randomData[0] + randomData[1]);
+        console.log("\r\n" + "testing: " + randomData[0] + randomData[1]);
 
     });
 };
