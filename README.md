@@ -1,4 +1,4 @@
-# Liri-node-app
+# Liri-node-app :blush:
 <h3>Overview</h3> 
 In this assignment, you will make LIRI. LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and Recognition Interface, **LIRI is a Language Interpretation and Recognition Interface.** LIRI will be a command line node app that takes in parameters and gives you back data.
 <br>
@@ -15,9 +15,9 @@ Make it so liri.js can take in one of the following commands:
   
    * `movie-this` output
    *If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'*
-   <img src="images/mrnobody.PNG" width="680px" height="320px">
+   <img src="images/mrnobody.PNG" width="680px" height="400px">
    <br>
-   <img src="images/movie-this.PNG" width="680px" height="320px">
+   <img src="images/movie-this.PNG" width="680px" height="400px">
 
    * `do-what-it-says` output
    <img src="images/do-what-it-says.PNG" width="680px">
