@@ -10,6 +10,7 @@ var moment = require('moment');
 
 const chalk = require('chalk');
 
+
 // Take 2 arguments
 var liriCmd = process.argv[2];
 var input = process.argv.slice(3).join(" ");
