@@ -16,9 +16,9 @@ In this assignment, you will make LIRI. LIRI is like iPhone's SIRI. However, whi
   
    * <strong>`movie-this`</strong> output
    *If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'*
-   <img src="images/mrnobody.PNG" width="680px" height="400px">
+   <img src="images/mrnobody.PNG" width="720px" height="400px">
    <br>
-   <img src="images/movie-this.PNG" width="680px" height="400px">
+   <img src="images/movie-this.PNG" width="7200px" height="400px">
 
    * <strong>`do-what-it-says`</strong> output
    <img src="images/do-what-it-says.PNG" width="680px">
