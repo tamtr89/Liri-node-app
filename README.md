@@ -16,20 +16,21 @@ Make it so liri.js can take in one of the following commands:
 
 <h3>Build with:</h3>
 <ul>
-       <li>Visual Studio Code (https://code.visualstudio.com) - Text editor
+<li>Visual Studio Code (https://code.visualstudio.com) - Text editor
 <li>Javascript
 <li>Node.js (https://nodejs.org/en) - Framework used
 <li>JSON (http://www.json.org) - Data format used
- <li>
+ 
    * [Node-Spotify-API](https://www.npmjs.com/package/node-spotify-api)
 
    * [Axios](https://www.npmjs.com/package/axios)
 
-     * You'll use Axios to grab data from the [OMDB API](http://www.omdbapi.com) and the [Bands In Town API](http://www.artists.bandsintown.com/bandsintown-api)
+   * You'll use Axios to grab data from the [OMDB API](http://www.omdbapi.com) and the [Bands In Town API](http://www.artists.bandsintown.com/bandsintown-api)
 
    * [Moment](https://www.npmjs.com/package/moment)
 
    * [DotEnv](https://www.npmjs.com/package/dotenv)
+   * [Chalk](https://www.npmjs.com/package/chalk)
    
    
       
