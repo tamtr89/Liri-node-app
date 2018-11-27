@@ -9,7 +9,13 @@ In this assignment, you will make LIRI. LIRI is like iPhone's SIRI. However, whi
 <li>Javascript
 <li>Node.js (https://nodejs.org/en) - Framework used
 <li>JSON (http://www.json.org) - Data format used
-<li>Spotify API (https://developer.spotify.com/documentation/web-api) - API for music
-<li>AXIOS API (https://www.npmjs.com/package/axios) - You'll use Axios to grab data from the OMDB API and the Bands In Town API
-<li>MOMENT (https://www.npmjs.com/package/moment)
+   * [Node-Spotify-API](https://www.npmjs.com/package/node-spotify-api)
+
+   * [Axios](https://www.npmjs.com/package/axios)
+
+     * You'll use Axios to grab data from the [OMDB API](http://www.omdbapi.com) and the [Bands In Town API](http://www.artists.bandsintown.com/bandsintown-api)
+
+   * [Moment](https://www.npmjs.com/package/moment)
+
+   * [DotEnv](https://www.npmjs.com/package/dotenv)
       
