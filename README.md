@@ -13,7 +13,7 @@ Make it so liri.js can take in one of the following commands:
 
    * `do-what-it-says`
 
-![](images/concert-this.png)
+![](images/concert-this.PNG)
 
 
 
