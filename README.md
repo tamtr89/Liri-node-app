@@ -4,22 +4,23 @@ In this assignment, you will make LIRI. LIRI is like iPhone's SIRI. However, whi
 <br>
 
 Make it so liri.js can take in one of the following commands:
-<img src="images/commands.PNG width="450px">
+<img src="images/commands.PNG" width="680px">
+<br>
 
-   * `concert-this`
-   <img src="images/concert-this.PNG" width="450px">
+   * `concert-this` output
+   <img src="images/concert-this.PNG" width="680px">
 
-   * `spotify-this-song`
-   <img src="images/spotify-this-song.PNG" width="450px">
+   * `spotify-this-song` output
+   <img src="images/spotify-this-song.PNG" width="680px">
   
-   * `movie-this`
+   * `movie-this` output
    *If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'*
-   <img src="images/mrnobody.PNG" width="450px">
+   <img src="images/mrnobody.PNG" width="680px">
    <br>
-   <img src="images/movie-this.PNG" width="450px">
+   <img src="images/movie-this.PNG" width="680px">
 
-   * `do-what-it-says`
-   <img src="images/do-what-it-says.PNG" width="450px">
+   * `do-what-it-says` output
+   <img src="images/do-what-it-says.PNG" width="680px">
 
 
 
