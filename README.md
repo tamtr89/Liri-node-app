@@ -11,16 +11,16 @@ In this assignment, you will make LIRI. LIRI is like iPhone's SIRI. However, whi
    * <strong>`concert-this`</strong> output
    <img src="images/concert-this.PNG" width="680px">
 
-   * `spotify-this-song` output
+   * <strong>`spotify-this-song`</strong> output
    <img src="images/spotify-this-song.PNG" width="680px">
   
-   * `movie-this` output
+   * <strong>`movie-this`</strong> output
    *If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'*
    <img src="images/mrnobody.PNG" width="680px" height="400px">
    <br>
    <img src="images/movie-this.PNG" width="680px" height="400px">
 
-   * `do-what-it-says` output
+   * <strong>`do-what-it-says`</strong> output
    <img src="images/do-what-it-says.PNG" width="680px">
 
 
