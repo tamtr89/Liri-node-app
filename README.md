@@ -13,7 +13,7 @@ Make it so liri.js can take in one of the following commands:
 
    * `do-what-it-says`
 
-![Optional Text](..images\concert-this.PNG)
+![alt text](screenshot/concert-this.png)
 
 
 
