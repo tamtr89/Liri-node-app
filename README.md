@@ -7,17 +7,19 @@ Make it so liri.js can take in one of the following commands:
 <img src="images/commands.PNG width="450px">
 
    * `concert-this`
-   <img src="images/concert-this.PNG width="450px">
+   <img src="images/concert-this.PNG" width="450px">
 
    * `spotify-this-song`
-   <img src="images/spotify-this-song.PNG width="450px">
+   <img src="images/spotify-this-song.PNG" width="450px">
   
    * `movie-this`
-   <img src="images/mrnobody.PNG width="450px">
-   <img src="images/movie-this.PNG width="450px">
+   *If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'*
+   <img src="images/mrnobody.PNG" width="450px">
+   <br>
+   <img src="images/movie-this.PNG" width="450px">
 
    * `do-what-it-says`
-   <img src="images/do-what-it-says.PNG width="450px">
+   <img src="images/do-what-it-says.PNG" width="450px">
 
 
 
