@@ -13,8 +13,7 @@ Make it so liri.js can take in one of the following commands:
 
    * `do-what-it-says`
 
-####Concert-this output
-![Screenshot](src="images.concert-this.png)
+
 
 
 
