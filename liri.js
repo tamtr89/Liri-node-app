@@ -51,9 +51,11 @@ function getConcert(artist) {
     axios.get(queryUrlBand).then(
         function (response) {
             // console.log(response.data);
-            console.log("Name of the venue: " + response.data[0].venue.name + "\r\n");
-            console.log("Venue Location: " + response.data[0].venue.city + "\r\n");
-            console.log("Date of event: " + moment(response.data[0].datetime).format("MM-DD-YYYY") + "\r\n");
+            console.log("*****CONCERT INFORMATION*****" + "\n");
+            
+            console.log("Venue: " + response.data[0].venue.name + "\n");
+            console.log("Location: " + response.data[0].venue.city + "\n");
+            console.log("Date of event: " + moment(response.data[0].datetime).format("MM-DD-YYYY") + "\n");
             console.log("\n--------------------------------------\n");
         }
     )
@@ -76,21 +78,23 @@ function getSong(songName) {
         }
         // console.log("data for song name: ", data.tracks.items[0]);
 
+        console.log("*****SONG INFORMATION*****" + "\n");
+        
         // Artist(s)
-        console.log("Artist Name: " + data.tracks.items[0].album.artists[0].name + "\r\n");
+        console.log("Artist Name: " + data.tracks.items[0].album.artists[0].name + "\n");
 
         // The song's name
-        console.log("Song Name: " + data.tracks.items[0].name + "\r\n");
+        console.log("Song Name: " + data.tracks.items[0].name + "\n");
 
         // A preview link of the song from Spotify
-        console.log("Preview Link: " + data.tracks.items[0].href + "\r\n");
+        console.log("Preview Link: " + data.tracks.items[0].href + "\n");
 
         // The album that the song is from
-        console.log("Album Name: " + data.tracks.items[0].album.name + "\r\n");
+        console.log("Album Name: " + data.tracks.items[0].album.name + "\n");
         console.log("\n--------------------------------------\n");
 
         // Append text into log.txt file
-        var logSong = "Artist: " + data.tracks.items[0].album.artists[0].name + "\nSong Name: " + data.tracks.items[0].name + "\n Preview Link: " + data.tracks.items[0].href + "\nAlbum Name: " + data.tracks.items[0].album.name + "\r\n";
+        var logSong = "Artist: " + data.tracks.items[0].album.artists[0].name + "\nSong Name: " + data.tracks.items[0].name + "\n Preview Link: " + data.tracks.items[0].href + "\nAlbum Name: " + data.tracks.items[0].album.name + "\n";
         
         fs.appendFile("log.txt", logSong, function (err) {
             if (err) throw err;
@@ -115,21 +119,21 @@ function getMovie(movieName) {
     axios.request(queryUrl).then(
         function (response) {
             // console.log(response.data);
-            console.log("Title: " + response.data.Title + "\r\n");
-            console.log("Year: " + response.data.Year + "\r\n");
-            console.log("IMDB Rating: " + response.data.imdbRating + "\r\n");
-            console.log("Rotten Tomatoes Rating: " + response.data.Ratings[1].Value + "\r\n");
-            console.log("Country: " + response.data.Country + "\r\n");
-            console.log("Language: " + response.data.Language + "\r\n");
-            console.log("Movie Plot: " + response.data.Plot + "\r\n");
-            console.log("Movie Actors: " + response.data.Actors + "\r\n");
+            console.log("*****MOVIE INFORMATION*****" + "\n");
+            
+            console.log("Title: " + response.data.Title + "\n");
+            console.log("Year: " + response.data.Year + "\n");
+            console.log("IMDB Rating: " + response.data.imdbRating + "\n");
+            console.log("Rotten Tomatoes Rating: " + response.data.Ratings[1].Value + "\n");
+            console.log("Country: " + response.data.Country + "\n");
+            console.log("Language: " + response.data.Language + "\n");
+            console.log("Movie Plot: " + response.data.Plot + "\n");
+            console.log("Movie Actors: " + response.data.Actors + "\n");
             console.log("\n--------------------------------------\n");
             logResults(response);
         }
     )
 }
-
-
 
 // Using the fs Node package, LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
 // FUNCTION RANDOM
@@ -144,7 +148,7 @@ function getRandom() {
             var randomData = data.split(",");
             liriApps(randomData[0], randomData[1]);
         }
-        console.log("\r\n" + "testing: " + randomData[0] + randomData[1]);
+        console.log("\n" + "testing: " + randomData[0] + randomData[1]);
         console.log("\n--------------------------------------\n");
 
     });
