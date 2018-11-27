@@ -8,7 +8,7 @@ In this assignment, you will make LIRI. LIRI is like iPhone's SIRI. However, whi
 <br>
 
 
-<h3>   * `concert-this` output </h3>
+   * <strong>`concert-this`</strong> output
    <img src="images/concert-this.PNG" width="680px">
 
    * `spotify-this-song` output
