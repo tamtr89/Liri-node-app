@@ -15,9 +15,9 @@ Make it so liri.js can take in one of the following commands:
   
    * `movie-this` output
    *If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'*
-   <img src="images/mrnobody.PNG" width="680px">
+   <img src="images/mrnobody.PNG" width="680px" height="320px">
    <br>
-   <img src="images/movie-this.PNG" width="680px">
+   <img src="images/movie-this.PNG" width="680px" height="320px">
 
    * `do-what-it-says` output
    <img src="images/do-what-it-says.PNG" width="680px">
