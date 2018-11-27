@@ -7,7 +7,8 @@ In this assignment, you will make LIRI. LIRI is like iPhone's SIRI. However, whi
 <img src="images/commands.PNG" width="680px">
 <br>
 
-   * `concert-this` output
+
+<h3>   * `concert-this` output </h3>
    <img src="images/concert-this.PNG" width="680px">
 
    * `spotify-this-song` output
@@ -24,7 +25,7 @@ In this assignment, you will make LIRI. LIRI is like iPhone's SIRI. However, whi
 
 
 
-
+<hr>
 
 <h3>Build with:</h3>
 <ul>
