@@ -25,7 +25,7 @@ Make it so liri.js can take in one of the following commands:
 
    * [Axios](https://www.npmjs.com/package/axios)
 
-   * You'll use Axios to grab data from the [OMDB API](http://www.omdbapi.com) and the [Bands In Town API](http://www.artists.bandsintown.com/bandsintown-api)
+        *You'll use Axios to grab data from the [OMDB API](http://www.omdbapi.com) and the [Bands In Town API](http://www.artists.bandsintown.com/bandsintown-api)*
 
    * [Moment](https://www.npmjs.com/package/moment)
 
