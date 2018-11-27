@@ -4,7 +4,7 @@ In this assignment, you will make LIRI. LIRI is like iPhone's SIRI. However, whi
 <hr>
 
 <h4>Make it so liri.js can take in one of the following commands:</h4>
-<img src="images/commands.PNG" width="680px">
+<img src="images/cmds.PNG" width="680px">
 <hr>
 
 

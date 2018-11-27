@@ -47,7 +47,7 @@ function liriApps(liriCmd, input) {
             break;
         // If nothing entered, run default message to user
         default:
-            console.log("Please enter one of the following commands: 'concert-this', 'spotify-this-song', 'movie-this', 'do-what-it-says'");
+            console.log(chalk.cyan.bold("Please enter one of the following commands: 'concert-this', 'spotify-this-song', 'movie-this', 'do-what-it-says'"));
     }
 }
 // ------------------------------------------------------------------------------------------------------------------------------------
