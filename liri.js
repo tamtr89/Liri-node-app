@@ -8,12 +8,21 @@ var fs = require("fs"); //The fs package to handle read/write.
 var axios = require("axios"); //Grab data from the OMDB API and the Bands In Town API
 var moment = require('moment');
 
+const chalk = require('chalk');
 
 // Take 2 arguments
 var liriCmd = process.argv[2];
 var input = process.argv.slice(3).join(" ");
 // console.log("INPUT----------------", input);
-console.log("\n--------------------------------------\n");
+// console.log(chalk.cyan.bold.underline("\n--------------------------------------\n"));
+console.log('\033c'); // clears out the terminal... usually.
+    console.log(chalk.magenta("   __ _      _ "));
+    console.log(chalk.magenta("  / /(_)_ __(_)"));
+    console.log(chalk.yellow(" / / | | '__| |"));
+    console.log(chalk.green("/ /__| | |  | |"));
+    console.log(chalk.blue("\\____/_|_|  |_|"));
+    console.log(chalk.blue("Welcome to Liri, the world's lamest personal assistant."));
+    console.log(chalk.gray("───────────────────────────────────────────"));
 
 
 
@@ -51,11 +60,11 @@ function getConcert(artist) {
     axios.get(queryUrlBand).then(
         function (response) {
             // console.log(response.data);
-            console.log("*****CONCERT INFORMATION*****" + "\n");
+            console.log(chalk.black.bgGreen.bold("*****CONCERT INFORMATION*****") + "\n");
             
-            console.log("Venue: " + response.data[0].venue.name + "\n");
-            console.log("Location: " + response.data[0].venue.city + "\n");
-            console.log("Date of event: " + moment(response.data[0].datetime).format("MM-DD-YYYY") + "\n");
+            console.log(chalk.green("Venue: ") + chalk.red.bold (response.data[0].venue.name) + "\n");
+            console.log(chalk.green("Location: ") + response.data[0].venue.city + "\n");
+            console.log(chalk.green("Date of event: ") + moment(response.data[0].datetime).format("MM-DD-YYYY") + "\n");
             console.log("\n--------------------------------------\n");
         }
     )
@@ -72,25 +81,25 @@ function getSong(songName) {
     // console.log(songName);
 
     // Search for song name:
-    spotify.search({ type: 'track', query: songName }, function (err, data) {
+    spotify.search({ type: 'track', query: songName, limit: 10 }, function (err, data) {
         if (err) {
             return console.log('Error occurred: ' + err);
         }
         // console.log("data for song name: ", data.tracks.items[0]);
 
-        console.log("*****SONG INFORMATION*****" + "\n");
+        console.log(chalk.bgMagenta.bold("*****SONG INFORMATION*****") + "\n");
         
         // Artist(s)
-        console.log("Artist Name: " + data.tracks.items[0].album.artists[0].name + "\n");
+        console.log(chalk.magentaBright("Artist Name: ") + chalk.yellow.bold (data.tracks.items[0].album.artists[0].name) + "\n");
 
         // The song's name
-        console.log("Song Name: " + data.tracks.items[0].name + "\n");
+        console.log(chalk.magentaBright("Song Name: ") + data.tracks.items[0].name + "\n");
 
         // A preview link of the song from Spotify
-        console.log("Preview Link: " + data.tracks.items[0].href + "\n");
+        console.log(chalk.magentaBright("Preview Link: ") + data.tracks.items[0].href + "\n");
 
         // The album that the song is from
-        console.log("Album Name: " + data.tracks.items[0].album.name + "\n");
+        console.log(chalk.magentaBright("Album Name: ") + data.tracks.items[0].album.name + "\n");
         console.log("\n--------------------------------------\n");
 
         // Append text into log.txt file
@@ -110,6 +119,8 @@ function getMovie(movieName) {
     // If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'
     if (!movieName) {
         movieName = "mr nobody";
+        console.log(chalk.magentaBright.bgBlue("If you haven't watched Mr. Nobody, then you should: http://www.imdb.com/title/tt0485947/") + "\n");
+	 	console.log(chalk.magentaBright.bgBlue.bold("It's on Netflix!" + "\r\n"))
     }
     // Run a request with axios
     // var movieName = process.argv[2]; //test in Node before I run function
@@ -119,16 +130,16 @@ function getMovie(movieName) {
     axios.request(queryUrl).then(
         function (response) {
             // console.log(response.data);
-            console.log("*****MOVIE INFORMATION*****" + "\n");
+            console.log(chalk.yellow.bgMagenta.bold("*****MOVIE INFORMATION*****" + "\n"));
             
-            console.log("Title: " + response.data.Title + "\n");
-            console.log("Year: " + response.data.Year + "\n");
-            console.log("IMDB Rating: " + response.data.imdbRating + "\n");
-            console.log("Rotten Tomatoes Rating: " + response.data.Ratings[1].Value + "\n");
-            console.log("Country: " + response.data.Country + "\n");
-            console.log("Language: " + response.data.Language + "\n");
-            console.log("Movie Plot: " + response.data.Plot + "\n");
-            console.log("Movie Actors: " + response.data.Actors + "\n");
+            console.log(chalk.cyan.bold("Title: ") + chalk.yellow.bold(response.data.Title)  + "\n");
+            console.log(chalk.cyan.bold("Year: ") + response.data.Year + "\n");
+            console.log(chalk.cyan.bold("IMDB Rating: ") + response.data.imdbRating + "\n");
+            console.log(chalk.cyan.bold("Rotten Tomatoes Rating: ") + response.data.Ratings[1].Value + "\n");
+            console.log(chalk.cyan.bold("Country: ") + response.data.Country + "\n");
+            console.log(chalk.cyan.bold("Language: ") + response.data.Language + "\n");
+            console.log(chalk.cyan.bold("Movie Plot: ") + response.data.Plot + "\n");
+            console.log(chalk.cyan.bold("Movie Actors: ") + response.data.Actors + "\n");
             console.log("\n--------------------------------------\n");
             logResults(response);
         }
