@@ -2,11 +2,5 @@ Artist: Adele
 Song Name: Million Years Ago
  Preview Link: https://api.spotify.com/v1/tracks/5VwSwu1zeiMGAjwe9nUmzZ
 Album Name: 25
-[object Object][object Object][object Object]Artist: Backstreet Boys
-Song Name: I Want It That Way
- Preview Link: https://api.spotify.com/v1/tracks/6e40mgJiCid5HRAGrbpGA6
-Album Name: The Hits--Chapter One
-[object Object][object Object]Artist: Harry Styles
-Song Name: Sign of the Times
- Preview Link: https://api.spotify.com/v1/tracks/5Ohxk2dO5COHF1krpoPigN
-Album Name: Harry Styles
+----------------------------------------------------
+[object Object]

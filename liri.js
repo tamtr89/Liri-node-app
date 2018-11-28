@@ -17,13 +17,13 @@ var input = process.argv.slice(3).join(" ");
 // console.log("INPUT----------------", input);
 // console.log(chalk.cyan.bold.underline("\n--------------------------------------\n"));
 console.log('\033c'); // clears out the terminal... usually.
-    console.log(chalk.magenta("   __ _      _ "));
-    console.log(chalk.magenta("  / /(_)_ __(_)"));
-    console.log(chalk.yellow(" / / | | '__| |"));
-    console.log(chalk.green("/ /__| | |  | |"));
-    console.log(chalk.blue("\\____/_|_|  |_|"));
-    console.log(chalk.blue("Welcome to Liri, the world's lamest personal assistant."));
-    console.log(chalk.gray("───────────────────────────────────────────"));
+console.log(chalk.magenta("   __ _      _ "));
+console.log(chalk.magenta("  / /(_)_ __(_)"));
+console.log(chalk.yellow(" / / | | '__| |"));
+console.log(chalk.green("/ /__| | |  | |"));
+console.log(chalk.blue("\\____/_|_|  |_|"));
+console.log(chalk.blue("Welcome to Liri, the world's lamest personal assistant."));
+console.log(chalk.gray("───────────────────────────────────────────"));
 
 
 
@@ -62,11 +62,22 @@ function getConcert(artist) {
         function (response) {
             // console.log(response.data);
             console.log(chalk.black.bgGreen.bold("*****CONCERT INFORMATION*****") + "\n");
-            
-            console.log(chalk.green("Venue: ") + chalk.red.bold (response.data[0].venue.name) + "\n");
+
+            console.log(chalk.green("Venue Name: ") + chalk.red.bold(response.data[0].venue.name) + "\n");
             console.log(chalk.green("Location: ") + response.data[0].venue.city + "\n");
-            console.log(chalk.green("Date of event: ") + moment(response.data[0].datetime).format("MM-DD-YYYY") + "\n");
+            console.log(chalk.green("Date of event: ") + moment(response.data[0].datetime).format("MMMM Do YYYY, h:mm:ss a") + "\n");
             console.log("\n--------------------------------------\n");
+
+            fs.appendFile("log.txt",
+                "Venue Name: " + response.data[0].venue.name + "\n" +
+                "Location: " + response.data[0].venue.city + "\n" +
+                "Date of event: " + moment(response.data[0].datetime).format('MMMM Do YYYY, h:mm:ss a') + "\n" +
+                "----------------------------------------------------" + "\n"
+                , function (err) {
+                    if (err) {
+                        return console.log(err);
+                    }
+                });
         }
     )
 }
@@ -89,9 +100,9 @@ function getSong(songName) {
         // console.log("data for song name: ", data.tracks.items[0]);
 
         console.log(chalk.bgMagenta.bold("*****SONG INFORMATION*****") + "\n");
-        
+
         // Artist(s)
-        console.log(chalk.magentaBright("Artist Name: ") + chalk.yellow.bold (data.tracks.items[0].album.artists[0].name) + "\n");
+        console.log(chalk.magentaBright("Artist Name: ") + chalk.yellow.bold(data.tracks.items[0].album.artists[0].name) + "\n");
 
         // The song's name
         console.log(chalk.magentaBright("Song Name: ") + data.tracks.items[0].name + "\n");
@@ -104,8 +115,8 @@ function getSong(songName) {
         console.log("\n--------------------------------------\n");
 
         // Append text into log.txt file
-        var logSong = "Artist: " + data.tracks.items[0].album.artists[0].name + "\nSong Name: " + data.tracks.items[0].name + "\n Preview Link: " + data.tracks.items[0].href + "\nAlbum Name: " + data.tracks.items[0].album.name + "\n";
-        
+        var logSong = "Artist: " + data.tracks.items[0].album.artists[0].name + "\nSong Name: " + data.tracks.items[0].name + "\n Preview Link: " + data.tracks.items[0].href + "\nAlbum Name: " + data.tracks.items[0].album.name + "\n" + "----------------------------------------------------" + "\n";
+
         fs.appendFile("log.txt", logSong, function (err) {
             if (err) throw err;
         });
@@ -121,7 +132,7 @@ function getMovie(movieName) {
     if (!movieName) {
         movieName = "mr nobody";
         console.log(chalk.magentaBright.bgBlue("If you haven't watched Mr. Nobody, then you should: http://www.imdb.com/title/tt0485947/") + "\n");
-	 	console.log(chalk.magentaBright.bgBlue.bold("It's on Netflix!" + "\r\n"))
+        console.log(chalk.magentaBright.bgBlue.bold("It's on Netflix!" + "\r\n"))
     }
     // Run a request with axios
     // var movieName = process.argv[2]; //test in Node before I run function
@@ -132,8 +143,8 @@ function getMovie(movieName) {
         function (response) {
             // console.log(response.data);
             console.log(chalk.yellow.bgMagenta.bold("*****MOVIE INFORMATION*****" + "\n"));
-            
-            console.log(chalk.cyan.bold("Title: ") + chalk.yellow.bold(response.data.Title)  + "\n");
+
+            console.log(chalk.cyan.bold("Title: ") + chalk.yellow.bold(response.data.Title) + "\n");
             console.log(chalk.cyan.bold("Year: ") + response.data.Year + "\n");
             console.log(chalk.cyan.bold("IMDB Rating: ") + response.data.imdbRating + "\n");
             console.log(chalk.cyan.bold("Rotten Tomatoes Rating: ") + response.data.Ratings[1].Value + "\n");
