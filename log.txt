@@ -3,4 +3,7 @@ Song Name: Million Years Ago
  Preview Link: https://api.spotify.com/v1/tracks/5VwSwu1zeiMGAjwe9nUmzZ
 Album Name: 25
 ----------------------------------------------------
-[object Object]
+[object Object]Venue Name: Swedish American Hall
+Location: San Francisco
+Date of event: November 29th 2018, 7:00:00 pm
+----------------------------------------------------
