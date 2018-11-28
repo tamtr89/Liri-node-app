@@ -2,6 +2,7 @@
 <h3>Overview</h3> 
 In this assignment, you will make LIRI. LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and Recognition Interface, <strong>LIRI is a Language Interpretation and Recognition Interface.</strong> LIRI will be a command line node app that takes in parameters and gives you back data.
 <hr>
+*[Demo:](https://tamtr89.github.io/Liri-node-app/)
 
 <h4>Make it so liri.js can take in one of the following commands:</h4>
 <img src="images/cmds.PNG" width="680px">
